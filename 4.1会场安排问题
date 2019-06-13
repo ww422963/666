@@ -1,0 +1,38 @@
+
+#include"stdio.h"
+
+int main(){
+
+    int n,i,j,k,num;
+
+    scanf("%d",&n);
+
+    int s[n+1],f[n+1],a[n+1];
+
+    for(i=1;i<=n;i++){scanf("%d%d",&s[i],&f[i]);a[i]=0;}
+
+    a[1]=1;num=1;
+
+    for(i=2;i<=n;i++){
+
+        for(j=1;j<=num;j++){
+
+            if(s[i]>=f[a[j]]){a[j]=i;break;}
+
+        }    
+
+        if(j>num){num++;a[num]=i;}
+
+    }    
+
+    for(k=1;k<=num;k++)printf("%d ",a[k]);
+
+    printf("\n");
+
+    printf("%d\n",num);
+
+    system("pause");
+
+    return 0;
+
+}        
